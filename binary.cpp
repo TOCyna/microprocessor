@@ -24,3 +24,13 @@ string Binary::to_string()
     }
     return str;
 }
+
+Binary& Binary::operator =(Binary &num)
+{
+    //cout << "num to string" << Binary(num.to_string()).to_string() << endl;
+    //return(Binary(num.to_string()));
+    const Binary *test = &num;
+    cout << test->to_string() << endl;
+    return *this;
+
+}

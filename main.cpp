@@ -13,9 +13,7 @@
 int main()
 {
     Bootloader boot = Bootloader();
-    boot.load("/home/alvaro/Documentos/MicroProcessador/MicroProcessador/assembly.txt");
-    cout << true + true;
-    cout << "Hello World!" << endl;
+    boot.load("/opt/temp/assembly.txt");
     return 0;
 }
 
