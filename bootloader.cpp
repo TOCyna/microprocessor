@@ -5,7 +5,6 @@ Bootloader::Bootloader()
     cout << "\n Bootloader Created \n";
     Memory memory;
     memory.set(2,Binary("100000000000"));
-
 }
 
 void Bootloader::load(string address)

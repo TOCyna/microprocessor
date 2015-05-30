@@ -9,15 +9,7 @@ Memory::Memory()
 
 void Memory::set(int index, Binary bin)
 {
-    cout << "set memories" << endl;
-    cout << bin.to_string() << endl;
-    //Binary test = bin;
-    Binary test;
-    cout << test.to_string() << endl;
-    test = bin;
-    cout << test.to_string() << endl;
-    //memory[index] = bin;
-    //cout << memory[index].to_string() << endl;
+    memory[index] = bin;
 }
 
 //int Memory::get(){

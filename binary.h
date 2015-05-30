@@ -14,7 +14,7 @@ public:
     Binary();
     Binary(string str);
     string to_string();
-    Binary &operator =(Binary &num);
+    Binary &operator =(const Binary &num);
 };
 
 #endif // BINARY_H

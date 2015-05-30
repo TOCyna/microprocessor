@@ -13,7 +13,7 @@
 int main()
 {
     Bootloader boot = Bootloader();
-    boot.load("/opt/temp/assembly.txt");
+    //boot.load("/opt/temp/assembly.txt");
     return 0;
 }
 
