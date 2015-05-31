@@ -10,6 +10,7 @@ private:
 public:
     Memory();
     void set(int index, Binary bin);
+    Binary get(int index);
 };
 
 #endif // MEMORY_H

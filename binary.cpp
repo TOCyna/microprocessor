@@ -16,7 +16,7 @@ Binary::Binary(string str)
         cout << "\nBINARY - binary number with wrong size\n";
 }
 
-string Binary::to_string()
+string Binary::toStr()
 {
     string str = "";
     for(int i = 0; i < size; i++) {
@@ -24,6 +24,7 @@ string Binary::to_string()
     }
     return str;
 }
+
 
 Binary& Binary::operator =(const Binary& num)
 {

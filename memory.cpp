@@ -10,8 +10,9 @@ Memory::Memory()
 void Memory::set(int index, Binary bin)
 {
     memory[index] = bin;
+    cout << memory[index].toStr() << endl;
 }
 
-//int Memory::get(){
-
-//}
+Binary Memory::get(int index){
+    return memory[index];
+}

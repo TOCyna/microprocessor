@@ -13,7 +13,11 @@
 int main()
 {
     Bootloader boot = Bootloader();
-    //boot.load("/opt/temp/assembly.txt");
+    //  Binary bin("101010101010");
+    boot.load("/opt/temp/assembly.txt");
+    //Memory *memory = new Memory;
+    //memory->set(10,bin);
+    //cout << memory->get(100).toStr() << endl;
     return 0;
 }
 

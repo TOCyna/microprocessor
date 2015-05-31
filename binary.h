@@ -13,7 +13,7 @@ private:
 public:
     Binary();
     Binary(string str);
-    string to_string();
+    string toStr();
     Binary &operator =(const Binary &num);
 };
 
