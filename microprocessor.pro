@@ -9,18 +9,22 @@ SOURCES += main.cpp \
     bootloader.cpp \
     memory.cpp \
     ula.cpp \
-    line.cpp \
     opcode.cpp \
     word.cpp \
-    binary.cpp
+    binary.cpp \
+    pc.cpp \
+    reg.cpp \
+    regi.cpp
 
 HEADERS += \
     output.h \
     bootloader.h \
     memory.h \
     ula.h \
-    line.h \
     opcode.h \
     word.h \
-    binary.h
+    binary.h \
+    pc.h \
+    reg.h \
+    regi.h
 

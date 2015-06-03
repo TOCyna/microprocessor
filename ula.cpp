@@ -1,23 +1,29 @@
 #include "ula.h"
 
-/*ULA::ULA()
-    : ac {0,0,0,0,0,0,0,0}
+ULA::ULA()
 {
 }
+
+Reg ULA::add(Reg ac, Reg reg)
+{
+    Reg sum;
+    Word word1 = ac.get();
+    Word word2 = reg.get();
+    sum.set(word1+word2);
+    return sum;
+}
+
+Reg ULA::sub(Reg ac, Reg reg)
+{
+    Reg sum;
+    Word word1 = ac.get();
+    Word word2 = reg.get();
+    sum.set(word1-word2);
+    return sum;
+}
+
 /*
-void ULA::add(bool n1[], bool n2[])
-{
-    bool sum[8] = addAux(n1,n2);
-    for (int i = 0; i < size; i++)
-        sum[i] = n1[i] + sum[i];
-}
 
-void ULA::sub(bool n1[], bool n2[])
-{
-    bool sub[size] = addAux(n1[size],twosComplement(n2));
-    ac = ac + sub;
-
-}
 
 void ULA::addi(bool n1[], bool n2[])
 {
@@ -42,7 +48,7 @@ void ULA::or_()
 bool & ULA::addAux(bool n1, bool n2)
 {
     int carry = 0;
-    bool sum[size];
+    int sum[size];
     for (int i = size - 1; i > -1; i--){
         sum[i] = n1[i] + n2[i] + carry;
         if (sum[i] > 1){
@@ -54,6 +60,7 @@ bool & ULA::addAux(bool n1, bool n2)
     }
     return &sum;
 }
+
 bool ULA::twosComplement(bool n[])
 {
     bool n1[size] = {0,0,0,0,0,0,0,1};
@@ -65,5 +72,5 @@ bool ULA::twosComplement(bool n[])
             n[i] = 0;
     }
     n = addAux(n,n1);
-}*/
-
+}
+*/

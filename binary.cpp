@@ -33,12 +33,14 @@ Binary& Binary::operator =(const Binary& num)
     return (*this);
 }
 
-bool Binary::getValue()
+Word Binary::getWord()
 {
-    bool value[8];
+    string str = "";
     for (int i = 0; i < 8; i++){
-        value[i] = num[i+4];
+        str += num[i+4] + '0';
     }
+    //cout << "String desgracada: " << str << endl;
+    Word value = Word(str);
     return value;
 }
 

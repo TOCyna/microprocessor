@@ -6,9 +6,9 @@ Bootloader::Bootloader()
 }
 
 
-void Bootloader::load(string address)
+void Bootloader::load(string address, Memory &memory)
 {
-    Memory memory;
+    //Memory memory = new Memory();
     string line;
     //load txt into reader
     ifstream reader(address.c_str());
@@ -22,6 +22,7 @@ void Bootloader::load(string address)
             //memory.get(1).toStr();
         }
     }
+    //return memory;
 }
 
 //Save code in memory
@@ -95,7 +96,7 @@ string Bootloader::dec2bin(string str)
     string binary = "";
 
     //converting str to int
-    for (int i = 0; i < str.length()-1; i++){
+    for (unsigned int i = 0; i < str.length()-1; i++){
         aux[i] = str.at(i);
         sum =+ sum + (aux[i] - '0')*pow(10,str.length()-i-2);
     }
@@ -121,7 +122,7 @@ int Bootloader::str2int(string str)
 {
     char aux[str.length()];
     int sum = 0;
-    for (int i = 0; i < str.length(); i++){
+    for (unsigned int i = 0; i < str.length(); i++){
         aux[i] = str.at(i);
         sum =+ sum + (aux[i] - '0')*pow(10,str.length()-i-1);
     }
@@ -140,9 +141,9 @@ string Bootloader::fixSize(string str, int type)
         else if (str.length() == 3)
             return str;
         else {
-            for (int i = 0; i < 3 - str.length(); i++)
+            for (unsigned int i = 0; i < 3 - str.length(); i++)
                 fixed.push_back('0');
-            for (int i = 0; i < str.length(); i++)
+            for (unsigned int i = 0; i < str.length(); i++)
                 fixed.push_back(str.at(i));
         }
         return fixed;
@@ -155,15 +156,15 @@ string Bootloader::fixSize(string str, int type)
         }
         //reversing string to get correct representation
         else if (str.length() == 8){
-            for (int i = 0; i < str.length(); i++){
+            for (unsigned int i = 0; i < str.length(); i++){
                 fixed.push_back(str.at(str.length()-i-1));
             }
         }
         //reversing and puting zeros;
         else {
-            for (int i = 0; i < 8 - str.length(); i++)
+            for (unsigned int i = 0; i < 8 - str.length(); i++)
                 fixed.push_back('0');
-            for (int i = 0; i < str.length(); i++){
+            for (unsigned int i = 0; i < str.length(); i++){
                 fixed.push_back(str.at(str.length()-i-1));
             }
         }
@@ -174,12 +175,13 @@ string Bootloader::fixSize(string str, int type)
         cout << "Error 109: wrong type in function fixSize\n";
         exit(0);
     }
+    return fixed; //dummy
 }
 
 //
 string Bootloader::fixForm(string line)
 {
-    int k = 0;
+    unsigned int k = 0;
     string address = "";
     string opC = "";
     string word = "";

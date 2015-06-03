@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <word.h>
+
 
 using namespace std;
 class Binary
@@ -15,7 +17,7 @@ public:
     Binary(string str);
     string toStr();
     Binary &operator =(const Binary &num);
-    bool getValue();
+    Word getWord();
     bool getOp();
 };
 

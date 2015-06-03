@@ -12,7 +12,7 @@ public:
     void set(int index, Binary bin);
     //Binary get(int index);
     Binary get(int index);
-    bool getValue(int index);
+    Word getWord(int index);
     bool getOp(int index);
 };
 

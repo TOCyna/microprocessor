@@ -14,7 +14,7 @@ class Bootloader
 {
 public:
     Bootloader();
-    void load(string address);
+    void load(string address, Memory &memory);
     string name2opCode(string str);
     //string dec2bin(string str);
     void copyCode(string line, Memory &memory);
