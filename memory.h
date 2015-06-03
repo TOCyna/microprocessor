@@ -10,7 +10,10 @@ private:
 public:
     Memory();
     void set(int index, Binary bin);
+    //Binary get(int index);
     Binary get(int index);
+    bool getValue(int index);
+    bool getOp(int index);
 };
 
 #endif // MEMORY_H

@@ -15,6 +15,8 @@ public:
     Binary(string str);
     string toStr();
     Binary &operator =(const Binary &num);
+    bool getValue();
+    bool getOp();
 };
 
 #endif // BINARY_H

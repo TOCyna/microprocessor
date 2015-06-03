@@ -2,7 +2,7 @@
 
 Bootloader::Bootloader()
 {
-    cout << "\n Bootloader Created \n";
+
 }
 
 
@@ -19,6 +19,7 @@ void Bootloader::load(string address)
         if (!line.empty()){
             //copy instruction in memory
             copyCode(line, memory);
+            //memory.get(1).toStr();
         }
     }
 }
@@ -32,18 +33,22 @@ void Bootloader::copyCode(string line, Memory &memory)
     //Breaking the line into address and instruction
     string tempInstrAdress = line.substr(0, 3);
     string opCode = line.substr(3, 4);
-    string data = line.substr(7, 8);
+    string word = line.substr(7, 8);
+    //cout << "instrAd: " << tempInstrAdress << " opCode: " << opCode << " word: " << word << endl;
 
     //Converting address to int
     int instrAdress = str2int(tempInstrAdress);
+    //cout << " iahsdfij: " << instrAdress << endl;
     if (instrAdress > 255){
         cout << "Error 256: stack overflow\n";
         exit(0);
     }
 
-    //Save information (opCode + data/registerNumber)into memory
-    Binary instr(opCode + data);
+    //Save information (opCode + word)into memory
+    Binary instr(opCode + word);
+    //cout << "instru " << instr.toStr() << endl;
     memory.set(instrAdress, instr);
+    //cout << "memory: " << memory.get(instrAdress).toStr() << endl;
 }
 
 //Convert the operations' names to a code
@@ -95,6 +100,11 @@ string Bootloader::dec2bin(string str)
         sum =+ sum + (aux[i] - '0')*pow(10,str.length()-i-2);
     }
 
+    if (sum > 255 || sum < 0){
+        cout << "Error 100: Word can not be represented in binary\n";
+        exit(0);
+    }
+
     //converting int to bin, but reversed
     while (sum/2 != 0){
         binary.push_back(sum%2 + '0');
@@ -137,7 +147,7 @@ string Bootloader::fixSize(string str, int type)
         }
         return fixed;
     }
-    else if (type == 1){ //data
+    else if (type == 1){ //word
         //checking size
         if (str.length() > 8){
             cout << "Error 309: instruction is too damn big\n";
@@ -158,6 +168,7 @@ string Bootloader::fixSize(string str, int type)
             }
         }
         return fixed;
+        cout << "fixed: " << fixed << endl;
     }
     else {
         cout << "Error 109: wrong type in function fixSize\n";
@@ -171,7 +182,7 @@ string Bootloader::fixForm(string line)
     int k = 0;
     string address = "";
     string opC = "";
-    string data = "";
+    string word = "";
     while (line.at(k) != 32){
         address.push_back(line.at(k));
         k++;
@@ -183,13 +194,15 @@ string Bootloader::fixForm(string line)
     }
     k++;
     while (k < line.length()){
-        data.push_back(line.at(k));
+        word.push_back(line.at(k));
         k++;
     }
     address = fixSize(address,0);
     opC = name2opCode(opC);
-    data = dec2bin(data);
+    word = dec2bin(word);
+    //cout << "adress: " << address << "\nopc: " << opC << "\nword: " << word << endl;
 
-    return address+opC+data;
+    return address+opC+word;
 }
+
 
