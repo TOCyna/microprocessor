@@ -13,7 +13,7 @@ Cu::Cu()
 
 void Cu::run(Memory memory)
 {
-    print();
+    printInt();
     while(true){
         getchar();
         //cout << "T1: MAR = PC" << endl;
@@ -29,7 +29,7 @@ void Cu::run(Memory memory)
         //cout << "IR = " << ir.get().toStr() << endl;
         //cout << "MBR: " << mbr.get().toStr() << endl;
         doIt(ir.get().getOp(), ir.get().getWord().toInt(), ir.get().getWord());
-        print();
+        printInt();
     }
 }
 

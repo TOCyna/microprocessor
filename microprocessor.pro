@@ -5,11 +5,9 @@ CONFIG -= qt
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    output.cpp \
     bootloader.cpp \
     memory.cpp \
     ula.cpp \
-    opcode.cpp \
     word.cpp \
     binary.cpp \
     pc.cpp \
@@ -18,11 +16,9 @@ SOURCES += main.cpp \
     cu.cpp
 
 HEADERS += \
-    output.h \
     bootloader.h \
     memory.h \
     ula.h \
-    opcode.h \
     word.h \
     binary.h \
     pc.h \
