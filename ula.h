@@ -19,6 +19,9 @@ public:
     bool twosComplement(bool n[]);
     bool &addAux(bool &n1, bool &n2);*/
     Reg sub(Reg ac, Reg reg);
+    Reg addi(Reg ac, Word word);
+    Reg and_(Reg ac, Reg reg);
+    Reg or_(Reg ac, Reg reg);
 };
 
 #endif // ULA_H

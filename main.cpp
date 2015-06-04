@@ -30,15 +30,21 @@ int main()
     for (int i = 0; i < 10; i++)
         pc.increment();
     Reg reg1, reg2;
-    reg1.set(Word("00001000"));
-    reg2.set(Word("00011001"));
+    reg1.set(Word("00000111"));
+    reg2.set(Word("11100000"));
+    Word word = Word("00000101");
     //cout << regs.get().toStr() << endl;
     ULA ula;
     //reg1.set(ula.add(reg1,reg2).get());
     //cout << "ADD TEST: " << reg1.get().toStr() << endl;
-    reg1.set(ula.sub(reg1,reg2).get());
-    cout << "SUB TEST: " << reg1.get().toStr() << endl;
-
+    //reg1.set(ula.sub(reg1,reg2).get());
+    //cout << "SUB TEST: " << reg1.get().toStr() << endl;
+    //reg1.set(ula.addi(reg1,word).get());
+    //cout << "ADDI TEST: " << reg1.get().toStr() << endl;
+    //reg1.set(ula.and_(reg1,reg2).get());
+    //cout << "AND TEST: " << reg1.get().toStr() << endl;
+    reg1.set(ula.or_(reg1,reg2).get());
+    cout << "OR TEST: " << reg1.get().toStr() << endl;
 
 
     cout << "=== END MAIN ===\n" ;

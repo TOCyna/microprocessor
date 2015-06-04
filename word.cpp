@@ -59,7 +59,7 @@ Word &Word::operator +(Word &word)
 
 Word &Word::operator -(Word &word)
 {
-    Word *ret;
+    Word *ret = NULL;
 
     //Word *word2 = &word;
     //cout << "THIS: " << this->toStr() << " - WORD: " << word2->toStr() << endl;
@@ -87,4 +87,28 @@ bool Word::operator >(Word &word)
         }
     }
     return false;
+}
+
+Word &Word::operator *(Word &word)
+{
+    for (int i = 0; i < size; i++){
+        if(word.num[i] == false || this->num[i] == false)
+            this->num[i] = false;
+        else
+            this->num[i] = true;
+    }
+
+    return *this;
+}
+
+Word &Word::operator /(Word &word)
+{
+    for (int i = 0; i < size; i++){
+        if(word.num[i] == true || this->num[i] == true)
+            this->num[i] = true;
+        else
+            this->num[i] = false;
+    }
+
+    return *this;
 }

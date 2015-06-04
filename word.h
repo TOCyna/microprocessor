@@ -19,6 +19,8 @@ public:
     Word &operator +(Word &word);
     Word &operator -(Word &word);
     bool operator >(Word &word);
+    Word &operator *(Word &word);
+    Word &operator /(Word &word);
 };
 
 #endif // WORD_H
