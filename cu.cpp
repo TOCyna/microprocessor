@@ -14,8 +14,8 @@ Cu::Cu()
 void Cu::run(Memory memory)
 {
     for (int i = 0; i < 14; i++){
-        cout << "SEARCH: " << i+1 << endl;
-        cout << " T1: MAR = PC" << endl;
+        cout << "\nSEARCH: " << i+1 << endl;
+        cout << "T1: MAR = PC" << endl;
         mar.set(pc.get());
         cout << "MAR = " << mar.get().toStr() << endl;
 
@@ -45,33 +45,38 @@ void Cu::run(Memory memory)
 
 void Cu::doIt(string str, int address, Word value)
 {
-    if (str == "nop");
-    else if (str == "add")
+    cout << "STR: " << str << endl;
+    if (str == "0000"); // nop
+    else if (str == "0001") // add
+    {
         ac.set(ula.add(ac, reg.at(address)).get());
-    //else if (str == "sub")
-    //    opCode = "0010";
-   // else if (str == "addi")
-    //    opCode = "0011";
-    //else if (str == "and")
+    }
+//    else if (str == "0010") // sub
+//    else if (str == "0011") // addi
+//    else if (str == "0100") // and
+//    else if (str == "0101") // or
 
-    //else if (str == "or")
-
-    else if (str == "movea")
+    else if (str == "0110") // movea
+    {
         ac.set(reg.at(address).get());
-    else if (str == "mover")
+    }
+    else if (str == "0111") // mover
+    {
         reg.at(address).set(ac.get());
-    else if (str == "movei")
+    }
+    else if (str == "1000") // movei
+    {
+        cout << "AC-before = " << ac.get().toInt() << endl;
         ac.set(value);
-//    else if (str == "load")
-//        opCode = "1001";
-//    else if (str == "store")
-//        opCode = "1010";
-    else if (str == "goto")
+        cout << "AC-after = " << ac.get().toInt() << endl;
+    }
+//    else if (str == "1001") // load
+//    else if (str == "1010") // store
+    else if (str == "1011") // goto
+    {
         pc.set(value);
+    }
 //    else {
 //        cout << "Error 708: Invalid opCode\n";
 //        exit(0);
 }
-
-
-
