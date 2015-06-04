@@ -7,6 +7,8 @@
 #include <memory.h>
 #include <pc.h>
 #include <array>
+#include <stdlib.h>
+#include <stdio.h>
 
 class Cu
 {
@@ -22,6 +24,8 @@ public:
     Cu();
     void run(Memory memory);
     void doIt(string str, int address, Word value);
+    void print();
+    void printInt();
 };
 
 #endif // CU_H

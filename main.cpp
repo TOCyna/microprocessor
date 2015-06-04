@@ -13,6 +13,7 @@
 #include <reg.h>
 #include <ula.h>
 #include <cu.h>
+#include <array>
 
 
 int main()

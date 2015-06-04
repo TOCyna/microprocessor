@@ -11,7 +11,7 @@ void Memory::set(int index, Binary bin)
 {
     //cout << "Binary: " << bin.toStr() << endl;
     memory[index] = bin;
-    cout << memory[index].toStr() << endl;
+    //cout << memory[index].toStr() << endl;
 }
 
 Binary Memory::get(int index)

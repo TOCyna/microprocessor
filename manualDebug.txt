@@ -1,0 +1,16 @@
+0 movei 0	ac = 0; pc++
+1 mover 0	reg0 = ac = 0; pc++
+2 movei 1   ac = 1; pc++
+3 mover 1   reg1 = ac = 1; pc++
+4 mover 2	reg2 = ac = 1; pc++
+5 movea 1   ac = reg1 = 1; pc++
+6 add 2		ac = ac + reg2 = 2; pc++
+7 mover 3	reg3 = ac = 2; pc++
+8 movea 1   ac = reg1 = 1; pc++
+9 mover 0   reg0 = ac = 1; pc++
+10 movea 2	ac = reg2 = 1; pc++
+11 mover 1  reg1 = ac = 1; pc++
+12 movea 3	ac = reg3 = 2; pc++
+13 mover 2	reg2 = ac = 2; pc++
+14 goto 5  	pc = 5;
+
