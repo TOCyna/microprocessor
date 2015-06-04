@@ -27,7 +27,9 @@ Word Memory::getWord(int index)
     return word;
 }
 
+/*
 bool Memory::getOp(int index)
 {
     return memory[index].getOp();
 }
+*/

@@ -18,7 +18,6 @@ public:
     string toStr();
     Binary &operator =(const Binary &num);
     Word getWord();
-    bool getOp();
 };
 
 #endif // BINARY_H

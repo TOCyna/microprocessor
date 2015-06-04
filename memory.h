@@ -13,7 +13,6 @@ public:
     //Binary get(int index);
     Binary get(int index);
     Word getWord(int index);
-    bool getOp(int index);
 };
 
 #endif // MEMORY_H

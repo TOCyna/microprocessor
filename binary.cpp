@@ -43,12 +43,3 @@ Word Binary::getWord()
     Word value = Word(str);
     return value;
 }
-
-bool Binary::getOp()
-{
-    bool op[4];
-    for (int i = 0; i < 4; i++){
-        op[i] = num[i];
-    }
-    return op;
-}
