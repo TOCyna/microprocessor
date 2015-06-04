@@ -14,6 +14,14 @@ void Memory::set(int index, Binary bin)
     //cout << memory[index].toStr() << endl;
 }
 
+void Memory::set(int index, Word word)
+{
+    Binary bin = memory[index];
+    bin.setWord(word);
+    memory[index] = bin;
+
+}
+
 Binary Memory::get(int index)
 {
     return memory[index];

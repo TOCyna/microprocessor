@@ -16,6 +16,7 @@ public:
     Word getWord(int index);
     Binary get(Word address);
     int str2int(string str);
+    void set(int index, Word word);
 };
 
 #endif // MEMORY_H

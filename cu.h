@@ -23,7 +23,7 @@ private:
 public:
     Cu();
     void run(Memory memory);
-    void doIt(string str, int address, Word value);
+    void doIt(string str, int address, Word value, Memory memory);
     void print();
     void printInt();
 };

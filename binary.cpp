@@ -52,3 +52,12 @@ string Binary::getOp()
     }
     return str;
 }
+
+void Binary::setWord(Word word)
+{
+    string str = word.toStr();
+    cout << "STR: " << str << endl;
+    for (int i = 0; i < 8; i++){
+        num[i+4] = str.at(i) - '0';
+    }
+}

@@ -20,6 +20,7 @@ public:
     Binary &operator =(const Binary &num);
     Word getWord();
     string getOp();
+    void setWord(Word word);
 };
 
 #endif // BINARY_H

@@ -13,7 +13,7 @@ Cu::Cu()
 
 void Cu::run(Memory memory)
 {
-    printInt();
+    print();
     while(true){
         getchar();
         //cout << "T1: MAR = PC" << endl;
@@ -28,12 +28,12 @@ void Cu::run(Memory memory)
         ir.set(mbr.get());
         //cout << "IR = " << ir.get().toStr() << endl;
         //cout << "MBR: " << mbr.get().toStr() << endl;
-        doIt(ir.get().getOp(), ir.get().getWord().toInt(), ir.get().getWord());
-        printInt();
+        doIt(ir.get().getOp(), ir.get().getWord().toInt(), ir.get().getWord(), memory);
+        print();
     }
 }
 
-void Cu::doIt(string str, int address, Word value)
+void Cu::doIt(string str, int address, Word value, Memory memory)
 {
     if (str == "0000"); // nop
     else if (str == "0001") // add
@@ -52,11 +52,10 @@ void Cu::doIt(string str, int address, Word value)
         reg.at(address).set(ac.get());
     else if (str == "1000") // movei
         ac.set(value);
-    //else if (str == "1001") // load AC = memoria[CONST]
-    //    ac.set(value);
-    //else if (str == "1010") // store memoria[CONST] = [AC]
-    //    ...
-
+    else if (str == "1001") // load AC = memoria[CONST]
+        ac.set(memory.getWord(address));
+    else if (str == "1010") // store memoria[CONST] = [AC]
+        memory.set(value.toInt(), ac.get());
     else if (str == "1011") // goto
         pc.set(value);
 
