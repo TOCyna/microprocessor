@@ -2,6 +2,7 @@
 #define MEMORY_H
 
 #include <binary.h>
+#include <cmath>
 
 class Memory
 {
@@ -13,6 +14,8 @@ public:
     //Binary get(int index);
     Binary get(int index);
     Word getWord(int index);
+    Binary get(Word address);
+    int str2int(string str);
 };
 
 #endif // MEMORY_H

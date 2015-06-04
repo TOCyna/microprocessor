@@ -12,6 +12,7 @@
 #include <pc.h>
 #include <reg.h>
 #include <ula.h>
+#include <cu.h>
 
 
 int main()
@@ -45,7 +46,8 @@ int main()
     //cout << "AND TEST: " << reg1.get().toStr() << endl;
     //reg1.set(ula.or_(reg1,reg2).get());
     //cout << "OR TEST: " << reg1.get().toStr() << endl;
-
+    Cu cu;
+    cu.run(memory);
 
     cout << "=== END MAIN ===\n" ;
     return 0;

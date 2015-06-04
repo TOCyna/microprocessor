@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ public:
     Word();
     Word(string str);
     string toStr();
+    int toInt(void);
     Word &operator =(const Word &num);
     Word &operator +(Word &word);
     Word &operator -(Word &word);

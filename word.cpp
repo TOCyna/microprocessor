@@ -25,6 +25,15 @@ string Word::toStr()
     return str;
 }
 
+int Word::toInt(void)
+{
+    int sum = 0;
+    for (int i = 0; i < size; i++){
+        sum += (num[i])*pow(2,size-i-1);
+    }
+    return sum;
+}
+
 Word &Word::operator =(const Word &num)
 {
     for(int i = 0; i < size; i++) {

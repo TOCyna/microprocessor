@@ -124,7 +124,7 @@ int Bootloader::str2int(string str)
     int sum = 0;
     for (unsigned int i = 0; i < str.length(); i++){
         aux[i] = str.at(i);
-        sum =+ sum + (aux[i] - '0')*pow(10,str.length()-i-1);
+        sum += (aux[i] - '0')*pow(10,str.length()-i-1);
     }
     return sum;
 }

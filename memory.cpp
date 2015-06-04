@@ -27,6 +27,25 @@ Word Memory::getWord(int index)
     return word;
 }
 
+Binary Memory::get(Word address)
+{
+    int index = str2int(address.toStr());
+    Binary instruction= memory[index];
+    //cout << word[7] << word[6] << word[5] << word[4] << word[3] << word[2] << word[1] << word[0] << endl;
+    return instruction;
+}
+
+int Memory::str2int(string str)
+{
+    char aux[str.length()];
+    int sum = 0;
+    for (unsigned int i = 0; i < str.length(); i++){
+        aux[i] = str.at(i);
+        sum += (aux[i] - '0')*pow(2,str.length()-i-1);
+    }
+    return sum;
+}
+
 /*
 bool Memory::getOp(int index)
 {

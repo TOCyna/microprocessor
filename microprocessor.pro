@@ -14,7 +14,8 @@ SOURCES += main.cpp \
     binary.cpp \
     pc.cpp \
     reg.cpp \
-    regi.cpp
+    regi.cpp \
+    cu.cpp
 
 HEADERS += \
     output.h \
@@ -26,5 +27,6 @@ HEADERS += \
     binary.h \
     pc.h \
     reg.h \
-    regi.h
+    regi.h \
+    cu.h
 

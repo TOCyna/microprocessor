@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <word.h>
+#include <string>
 
 
 using namespace std;
@@ -18,6 +19,7 @@ public:
     string toStr();
     Binary &operator =(const Binary &num);
     Word getWord();
+    string getOp();
 };
 
 #endif // BINARY_H
