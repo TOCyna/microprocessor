@@ -1,0 +1,12 @@
+Olá,
+É preciso colocar na pasta /opt/temp um arquivo de nome "assembly.txt",
+ficando "/opt/temp/assembly.txt" com as instruções a serem executadas pelo microcontrolador.
+
+É importante seguir a sintaxe, endereçoDeMemória instrução valor, separados por espaço,
+Ex1.:
+5 movea 1
+
+Ex2.:
+4 mover 2
+
+Agora é só desfrutar desse microcontrolador super potente!!!
