@@ -1,0 +1,15 @@
+0 movei 0
+1 mover 0
+2 movei 1
+3 mover 1
+4 mover 2
+5 movea 1
+6 add 2
+7 mover 3
+8 movea 1
+9 mover 0
+10 movea 2
+11 mover 1
+12 movea 3
+13 mover 2
+14 goto 5

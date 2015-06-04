@@ -32,7 +32,7 @@ int main()
     Reg reg1, reg2;
     reg1.set(Word("00000111"));
     reg2.set(Word("11100000"));
-    Word word = Word("00000101");
+    //Word word = Word("00000101");
     //cout << regs.get().toStr() << endl;
     ULA ula;
     //reg1.set(ula.add(reg1,reg2).get());
@@ -43,8 +43,8 @@ int main()
     //cout << "ADDI TEST: " << reg1.get().toStr() << endl;
     //reg1.set(ula.and_(reg1,reg2).get());
     //cout << "AND TEST: " << reg1.get().toStr() << endl;
-    reg1.set(ula.or_(reg1,reg2).get());
-    cout << "OR TEST: " << reg1.get().toStr() << endl;
+    //reg1.set(ula.or_(reg1,reg2).get());
+    //cout << "OR TEST: " << reg1.get().toStr() << endl;
 
 
     cout << "=== END MAIN ===\n" ;
