@@ -64,8 +64,8 @@ void Cu::doIt(string str, int address, Word value, Memory memory)
 void Cu::print()
 {
     cout << "PC: " << pc.get().toStr() << "\nMBR: " << mbr.get().toStr()
-         << "\nMAR: " << mar.get().toStr() << "\nAC: " << ac.get().toStr()
-         << "\nIR: " << ir.get().toStr();
+         << "\nMAR: " << mar.get().toStr() << "\nIR: " << ir.get().toStr()
+         << "\nAC: " << ac.get().toStr();
     for (int i = 0; i < 8; i++)
         cout << "\nReg" << i << ": " << reg.at(i).get().toStr();
     cout << endl;
@@ -74,8 +74,8 @@ void Cu::print()
 void Cu::printInt()
 {
     cout << "PC: " << pc.get().toInt() << "\nMBR: " << mbr.get().toStr()
-         << "\nMAR: " << mar.get().toInt() << "\nAC: " << ac.get().toInt()
-         << "\nIR: " << ir.get().toStr();
+         << "\nMAR: " << mar.get().toInt() << "\nIR: " << ir.get().toStr()
+         << "\nAC: " << ac.get().toInt();
     for (int i = 0; i < 8; i++)
         cout << "\nReg" << i << ": " << reg.at(i).get().toInt();
     cout << endl;

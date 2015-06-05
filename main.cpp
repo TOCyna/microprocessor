@@ -48,11 +48,11 @@ int main()
     //reg1.set(ula.or_(reg1,reg2).get());
     //cout << "OR TEST: " << reg1.get().toStr() << endl;
     Cu cu;
-    //cu.run(memory);
-    Memory memory1;
-    Word word = Word("00001111");
-    memory1.set(0, word);
-    cout << memory1.get(0).toStr();
+    cu.run(memory);
+    //Memory memory1;
+    //Word word = Word("00001111");
+    //memory1.set(0, word);
+    //cout << memory1.get(0).toStr();
     cout << "=== END MAIN ===\n" ;
     return 0;
 }
